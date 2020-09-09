@@ -1,7 +1,12 @@
 /* Tipografía */
 @font-face {
-  font-family: "FuturaPT";
+  font-family: "FuturaLight";
   src: url("./assets/fonts/FuturaPT-LightObl.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "FuturaBold";
+  src: url("./assets/fonts/FuturaPT-BoldObl.woff2") format("woff2");
 }
 
 /****************************************
@@ -30,9 +35,9 @@
   --backgroundColor: var(--blanco);
   --backgroundColorHeader: var(--secundario);
   /* Tipografía */
-  --headingFonts: "FuturaPT";
-  --bodyFonts: "FuturaPT";
-  font-size: 112.5%; /* Tipografía default de textos en 18px en lugar de 16px, 100% = 16px & 112.5% = 18px */
+  --headingFonts: "FuturaBold";
+  --bodyFonts: "FuturaLight";
+  --font-size: 112.5%; /* Tipografía default de textos en 18px en lugar de 16px, 100% = 16px & 112.5% = 18px */
   --h1: 40px;
   --h2: 33px;
   --h3: 27px;
@@ -48,7 +53,8 @@ html {
 }
 
 body {
-  font-family: var(--font-family-body);
+  font-family: var(--bodyFonts);
+  font-size: var(--font-size);
 }
 
 h1,
@@ -56,64 +62,64 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--font-family-headings);
+  font-family: var(--headingFonts);
 }
 
 h1 {
-  font-size: 40px;
+  font-size: var(--h1);
 }
 
 h2 {
-  font-size: 33px;
+  font-size: var(--h2);
 }
 
 h3 {
-  font-size: 27px;
+  font-size: var(--h3);
 }
 
 h4 {
-  font-size: 24px;
+  font-size: var(--h4);
 }
 
 h5 {
-  font-size: 19px;
+  font-size: var(--h5);
 }
 
-/****************************************
-*    Temp
-*****************************************/
-/* TODO: Ejercicio aplicar estilos de figma a cajas */
+a {
+  color: var(--primario);
+  text-decoration: none;
+  transition: color 400ms ease-in-out;
+}
+
+a:hover {
+  color: var(--secundarioFuerte);
+}
 
 /****************************************
 *    Componentes
 *****************************************/
 body {
-  background-color: #ba8547;
+  background-color: #ffffff;
   height: 100%;
 }
-nav {
-  outline: rgba(255, 0, 0, 0.75) dotted 2px;
+
+.header {
+  /* margin & padding aceptan 4 valores 1. top, 2. right, 3. bottom, 4. left */
+  padding: 0 0 0 20px;
+}
+
+.nav {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90%;
 }
-nav ul li{
-  font-family: FuturaPT;
-  font-style: BoldObl;
 
-}
-nav ul li a{
-text-decoration: none;
-font-family: FuturaPT;
-font-style: LightObl;
-
+.menu {
+  --font-size: 30px;
+  font-size: var(--font-size);
 }
 
-}
-/****************************************
-*    Helpers
-*****************************************/
-[dots] {
-  outline: rgba(255, 0, 0, 0.75) dotted 2px;
+.menu__item:nth-child(3) {
+  font-family: var(--headingFonts);
 }
