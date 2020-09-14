@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "FuturaBold";
-  src: url("./assets/fonts/FuturaPT-BoldObl.woff2") format("woff2");
+  src: url("./assets/fonts/FuturaPT-MediumObl.woff2") format("woff2");
 }
 
 /****************************************
@@ -123,3 +123,7 @@ body {
 .menu__item:nth-child(3) {
   font-family: var(--headingFonts);
 }
+
+/****************************************
+*    Author - custom
+*****************************************/
