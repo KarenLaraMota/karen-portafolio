@@ -9,6 +9,16 @@
   src: url("./assets/fonts/FuturaPT-MediumObl.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "FuturaBook";
+  src: url("./assets/fonts/FuturaPT-Book.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "FuturaBoldNormal";
+  src: url("./assets/fonts/FuturaPT-Bold.woff2") format("woff2");
+}
+
 /****************************************
 *    Variables
 *****************************************/
@@ -37,6 +47,8 @@
   /* Tipografía */
   --headingFonts: "FuturaBold";
   --bodyFonts: "FuturaLight";
+  --menuFonts: "FuturaBoldNormal";
+  --footerFonts: "FuturaBook";
   --font-size: 112.5%; /* Tipografía default de textos en 18px en lugar de 16px, 100% = 16px & 112.5% = 18px */
   --h1: 40px;
   --h2: 33px;
@@ -116,6 +128,7 @@ body {
 }
 
 .menu {
+  font-family: var(--menuFonts);
   --font-size: 30px;
   font-size: var(--font-size);
 }
@@ -123,6 +136,19 @@ body {
 .menu__item:nth-child(3) {
   font-family: var(--headingFonts);
 }
+
+.footer {
+  font-family: var(--headingFonts);
+  background-color: var(--blancoClaro);
+  text-align: center;
+}
+
+.footer span {
+  font-family: var(--footerFonts);
+  color: var(--secundarioFuerte);
+  padding-right: 1rem; /* 1rem = 16px */
+}
+
 /****************************************
 *    Author - custom
 *****************************************/
