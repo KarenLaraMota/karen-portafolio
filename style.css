@@ -158,15 +158,39 @@ body {
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 } */
-.editoria__proyecto {
-}
-.editoria__imagen {
-}
-.editoria__titulo {
-}
 .editorial {
   position: relative;
   display: flex;
+}
+
+.header__nav {
+  background-color: var(--primario);
+  width: 100vw;
+}
+
+.header__nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header__nav li {
+  font: size 16px;
+  padding: 10px 0;
+}
+
+.header__nav li a {
+  color: white;
+}
+
+.editorial::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 310px;
+  right: 0;
+  top: 250px;
+  background: rgba(214, 183, 147, 0.4);
 }
 
 .categoria {
@@ -175,7 +199,6 @@ body {
 .proyecto-texto {
   order: 2;
   flex: 1;
-  background: #767676;
   /* display: grid; */
   /* place-content: center; */
   text-align: right;
