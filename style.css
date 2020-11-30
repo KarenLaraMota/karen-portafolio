@@ -60,10 +60,6 @@
 /****************************************
 *    Base
 *****************************************/
-html {
-  height: 100%;
-}
-
 body {
   font-family: var(--bodyFonts);
   font-size: var(--font-size);
@@ -110,21 +106,21 @@ a:hover {
 /****************************************
 *    Componentes
 *****************************************/
-body {
-  background-color: #ffffff;
-  height: 100%;
+.home {
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
-  /* margin & padding aceptan 4 valores 1. top, 2. right, 3. bottom, 4. left */
-  padding: 0 0 0 20px;
+  padding-left: 1rem;
 }
 
+/* Menu del home */
 .nav {
+  flex: 1; /* Esto permite que este elemento crezca al tamaño de la pantalla */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90%;
 }
 
 .menu {
@@ -137,14 +133,32 @@ body {
   font-family: var(--headingFonts);
 }
 
+/* Menu sitewide */
+.header__nav {
+  background-color: var(--primario);
+  width: 100vw;
+  margin-bottom: 2rem;
+}
+
+.header__nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header__nav li {
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+.header__nav li a {
+  color: white;
+}
+
+/* Footer */
 .footer {
   font-family: var(--headingFonts);
   background-color: var(--blancoClaro);
   text-align: center;
-}
-
-.individual .footer {
-  margin-top: 1rem;
 }
 
 .footer span {
@@ -153,59 +167,33 @@ body {
   padding-right: 1rem; /* 1rem = 16px */
 }
 
-/****************************************
-*    Author - custom
-*****************************************/
-/* .editorial {
-  background: var(--brand-dos-2);
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-} */
-.editorial {
+/* Categoria */
+.categoria {
   position: relative;
-  display: flex;
 }
 
-.header__nav {
-  background-color: var(--primario);
-  width: 100vw;
-}
-
-.header__nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-}
-
-.header__nav li {
-  font: size 16px;
-  padding: 10px 0;
-}
-
-.header__nav li a {
-  color: white;
-}
-
-/* Individual */
-.individual .header {
+.categoria .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--blancoClaro);
+}
+
+.categoria .header__nav ul {
   margin: 0;
 }
 
-.individual .header a {
-  /* color: blue; */
+.categoria .header a {
   padding-right: 20px;
 }
 
-.individual .header__nav ul {
-  margin: 0;
+.categoria main {
+  position: relative;
+  display: flex;
+  margin-bottom: 2rem;
 }
 
-.editorial::after {
+.categoria main::after {
   content: "";
   position: absolute;
   width: 40px;
@@ -215,14 +203,9 @@ body {
   background: rgba(214, 183, 147, 0.4);
 }
 
-.categoria {
-  position: absolute;
-}
 .proyecto-texto {
   order: 2;
   flex: 1;
-  /* display: grid; */
-  /* place-content: center; */
   text-align: right;
   width: 100%;
   margin-right: 37px;
@@ -241,7 +224,6 @@ body {
 .proyecto-imagenes {
   position: relative;
   width: 760px;
-  height: 920px;
   display: grid;
   margin-right: 37px;
   gap: 20px;
@@ -257,7 +239,6 @@ body {
   .proyecto-imagenes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: repeat(3, minmax(0, 1fr));
-    gap: unset;
   }
 
   .proyecto-imagenes figure {
@@ -268,4 +249,50 @@ body {
   .proyecto-imagenes figure:nth-child(4) {
     margin: 0 auto 0 0;
   }
+}
+
+/* Archivo */
+.categoria.archivo {
+  /* background: blue; */
+}
+
+.categoria.archivo main {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 2rem;
+}
+
+.categoria.archivo main::after {
+  display: none;
+}
+
+.categoria.archivo .proyecto-texto {
+  position: relative;
+  color: var(--brand-dos-1);
+}
+
+.categoria.archivo .proyecto-texto::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 310px;
+  right: 0;
+  top: 250px;
+  background: rgba(214, 183, 147, 0.4);
+}
+
+.categoria.archivo .proyecto-imagenes figure {
+  margin: 0 auto;
+}
+.categoria.archivo .proyecto-imagenes {
+  position: relative;
+  width: 760px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
+  margin-right: 70px;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
 }
