@@ -1,9 +1,18 @@
 /* Tipografía */
 @font-face {
   font-family: "FuturaLight";
+  src: url("./assets/fonts/FuturaPT-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "FuturaLightOb";
   src: url("./assets/fonts/FuturaPT-LightObl.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "FuturaMedium";
+  src: url("./assets/fonts/FuturaPT-Medium.woff2") format("woff2");
+}
 @font-face {
   font-family: "FuturaBold";
   src: url("./assets/fonts/FuturaPT-MediumObl.woff2") format("woff2");
@@ -112,7 +121,21 @@ a:hover {
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding-left: 1rem;
+  background-color: var(--blancoClaro);   
+}
+
+.header h1 {
+  font-size: 16px;
+  font-family: "FuturaMedium";
+  padding: 7px 0;
+}
+
+.header a {
+  padding-right: 1rem;
 }
 
 /* Menu del home */
@@ -124,13 +147,13 @@ a:hover {
 }
 
 .menu {
-  font-family: var(--menuFonts);
+  font-family: FuturaLight;
   --font-size: 30px;
   font-size: var(--font-size);
 }
 
 .menu__item:nth-child(3) {
-  font-family: var(--headingFonts);
+  font-family: FuturaMedium;(--headingFonts);
 }
 
 /* Menu sitewide */
@@ -147,7 +170,7 @@ a:hover {
 
 .header__nav li {
   font-size: 16px;
-  padding: 10px 0;
+  padding: 7px 0;
 }
 
 .header__nav li a {
@@ -156,15 +179,15 @@ a:hover {
 
 /* Footer */
 .footer {
-  font-family: var(--headingFonts);
+  font-family:FuturaMedium;
   background-color: var(--blancoClaro);
   text-align: center;
 }
 
 .footer span {
-  font-family: var(--footerFonts);
+  font-family: FuturaBook;
   color: var(--secundarioFuerte);
-  padding-right: 1rem; /* 1rem = 16px */
+  padding-right: 0.5rem; /* 1rem = 16px */
 }
 
 /* Categoria */
@@ -184,7 +207,7 @@ a:hover {
 }
 
 .categoria .header a {
-  padding-right: 20px;
+  padding-right: 7px;
 }
 
 .categoria main {
@@ -212,6 +235,7 @@ a:hover {
 }
 
 .proyecto-texto h2 {
+  font-family: FuturaMedium;
   font-size: 60px;
   padding-top: 250px;
   padding-bottom: 166px;
@@ -226,7 +250,7 @@ a:hover {
   width: 760px;
   display: grid;
   margin-right: 37px;
-  gap: 20px;
+  gap: 10px;
 }
 
 .proyecto-imagenes figure,
@@ -270,6 +294,7 @@ a:hover {
 .categoria.archivo .proyecto-texto {
   position: relative;
   color: var(--brand-dos-1);
+  transform: translateY(-10px);
 }
 
 .categoria.archivo .proyecto-texto::after {
@@ -278,7 +303,7 @@ a:hover {
   width: 40px;
   height: 310px;
   right: 0;
-  top: 250px;
+  top: 140px;
   background: rgba(214, 183, 147, 0.4);
 }
 
@@ -287,12 +312,33 @@ a:hover {
 }
 .categoria.archivo .proyecto-imagenes {
   position: relative;
-  width: 760px;
+  width: 920px;
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(3, auto);
-  margin-right: 70px;
+  margin-right: 100px;
   gap: 10px;
   padding: 0;
   margin: 0;
+}
+
+/* Contacto */
+.contacto {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.contacto-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contacto-social img {
+  max-width: 100%;
+  border-radius: 100px;
 }
