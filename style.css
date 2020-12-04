@@ -182,10 +182,11 @@ a:hover {
   font-family:FuturaMedium;
   background-color: var(--blancoClaro);
   text-align: center;
+  padding: 5px 0;
 }
 
 .footer span {
-  font-family: FuturaBook;
+  font-family: "FuturaBook";
   color: var(--secundarioFuerte);
   padding-right: 0.5rem; /* 1rem = 16px */
 }
@@ -215,14 +216,15 @@ a:hover {
   display: flex;
   margin-bottom: 2rem;
 }
-
+/* Barrita*/
 .categoria main::after {
   content: "";
   position: absolute;
   width: 40px;
   height: 310px;
   right: 0;
-  top: 250px;
+  margin-right: 2.2rem;
+  top: 125px;
   background: rgba(214, 183, 147, 0.4);
 }
 
@@ -234,13 +236,15 @@ a:hover {
   margin-right: 37px;
 }
 
+/* Titulo del proyecto malba*/
 .proyecto-texto h2 {
-  font-family: FuturaMedium;
+  font-family: "FuturaMedium";
   font-size: 60px;
-  padding-top: 250px;
+  padding-top: 234px;
   padding-bottom: 166px;
+  color: #d6b793;
 }
-
+/* Texto del proyecto malba*/
 .proyecto-texto p {
   align-self: start;
 }
